@@ -16,7 +16,7 @@ jobs:
         id: comment
         env:
           GIT_COMMNET: ${{ github.event.comment.body }}
-        run: echo ::set-output name=tag::${GIT_COMMNET#revertTag}
+        run: echo ::set-output name=tag::${GIT_COMMNET#revertTag }
         
       - name: Delete tag and release
         # You may pin to the exact commit or the version.
