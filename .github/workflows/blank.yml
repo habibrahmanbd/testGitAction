@@ -15,9 +15,9 @@ jobs:
         uses: actions/checkout@v2
       - name: Comment Print
         if: contains(github.event.comment.body, '/revert')
-        run: |
-          $comment = ${{ github.event.comment.body }}
-          $prefix = '/revert'
-          $tagName = ${comment#"$prefix"}
-          echo $comment
+        env:
+          COMMENT: ${{ github.event.comment.body }}
+          PREFIX: ${{ '/revert' }}
+          TAGNAME: ${{COMMENT#${{PREFIX}}}}
+        run: echo $TAGNAME
           
