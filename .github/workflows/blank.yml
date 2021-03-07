@@ -27,6 +27,6 @@ jobs:
           TAG_NAME: ${{steps.comment.outputs.tag}}
         with:
           # tag name
-          tag_name:  $TAG_NAME
+          tag_name: TAG_NAME
           # whether to delete release or not
           delete_release: true
