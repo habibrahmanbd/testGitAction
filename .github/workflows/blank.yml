@@ -18,5 +18,6 @@ jobs:
         run: |
           $comment = ${{ github.event.comment.body }}
           $prefix = '/revert'
-          $tagName = ${#"$prefix"}
+          $tagName = ${comment#"$prefix"}
+          echo $comment
           
