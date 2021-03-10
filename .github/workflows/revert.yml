@@ -1,18 +1,22 @@
-name: Automatic Revert Master Commit
-
-on:
-  issue_comment:
-    types: [created]
+name: Manual Undo Push Action
+on: 
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: 'Branch to undo commit'
+        required: true
+        default: 'master'
 
 jobs:
   Undo:
     runs-on: ubuntu-latest
-    if: contains(github.event.comment.body, '/revert')
-    steps:
-      - name: Checkout latest code
+    steps: 
+      - name: Checkout
         uses: actions/checkout@v2
-      - name: Automatic Revert
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          git pull origin master
+        with:
+           ref: ${{ github.event.inputs.branch }}
+           fetch-depth: 0 
+      - name: Undo Push
+        uses: exions/undo-push@v1
+        with:
+          branch: ${{ github.event.inputs.branch }}
