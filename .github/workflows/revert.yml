@@ -15,5 +15,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          git reset --hard HEAD~1
-          git push -f origin master
+          git pull origin master
