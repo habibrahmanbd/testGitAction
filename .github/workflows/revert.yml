@@ -12,6 +12,8 @@ jobs:
       - name: Checkout latest code
         uses: actions/checkout@v2
       - name: Automatic Revert
-        uses: srt32/revert@v0.0.1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git reset --hard HEAD~1
+          git push -f origin master
