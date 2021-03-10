@@ -12,7 +12,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-           ref: master
+           ref: origin/main
            fetch-depth: 0 
       - name: Undo Push
         uses: exions/undo-push@v1
