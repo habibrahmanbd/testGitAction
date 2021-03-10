@@ -4,13 +4,8 @@ sdfdsfdsfdsf
 dsfdsfdsf
 Testing
 Testing
-sfdsf
-sdf
-dsf
-sdf
-ds
-fds
-fsd
+
+Removing this text
 
 
 This text will not be added into the master text Readme after undo push.
