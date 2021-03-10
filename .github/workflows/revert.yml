@@ -7,7 +7,7 @@ on:
 jobs:
   Undo:
     runs-on: ubuntu-latest
-    if: contains(github.event.comment.body, 'revertCommit')
+    if: contains(github.event.comment.body, '/revert')
     steps:
       - name: Checkout latest code
         uses: actions/checkout@v2
