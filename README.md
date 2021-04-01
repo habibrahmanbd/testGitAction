@@ -1,9 +1,5 @@
 # testGitAction
-dsfkjdshfkdsf
-sdfdsfdsfdsf
-dsfdsfdsf
-Testing
-Testing
+Releasd a version
 
 Removing this text
 
